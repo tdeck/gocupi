@@ -1,9 +1,9 @@
 package polargraph
 
 import (
-	chart "github.com/gonum/plot"
-	chartplotter "github.com/gonum/plot/plotter"
-	vg "github.com/gonum/plot/vg"
+	chart "gonum.org/v1/plot"
+	chartplotter "gonum.org/v1/plot/plotter"
+	vg "gonum.org/v1/plot/vg"
 	"image/color"
 )
 
@@ -60,10 +60,7 @@ func WriteStepsToChart(stepData <-chan int8) {
 
 	// Create a new plot, set its title and
 	// axis labels.
-	p, err := chart.New()
-	if err != nil {
-		panic(err)
-	}
+	p := chart.New()
 	p.Title.Text = "Polargraph Position & Velocity"
 	p.X.Label.Text = "2ms Slice"
 	p.Y.Label.Text = "Position(mm) / Velocity (mm/s)"
