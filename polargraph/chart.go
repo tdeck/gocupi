@@ -93,7 +93,7 @@ func WriteStepsToChart(stepData <-chan int8) {
 	p.Legend.Add("Right Vel", rightVelLine)
 
 	// Save the plot to a PNG file.
-	if err := p.Save(14, 8.5, "chart.png"); err != nil {
+	if err := p.Save(14*vg.Inch, 8.5*vg.Inch, "chart.png"); err != nil {
 		panic(err)
 	}
 }
